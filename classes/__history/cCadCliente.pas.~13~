@@ -1,0 +1,40 @@
+unit cCadCliente;
+
+interface
+
+uses System.Classes,
+     Vcl.Controls,
+     Vcl.ExtCtrls,
+     Vcl.Dialogs,
+     ZAbstractConnection,
+     ZConnection,
+     ZAbstractRODataset,
+     ZAbstractDataset,
+     ZDataset,
+     System.SysUtils;
+
+type
+  TCliente = class
+  private
+    ConexaoDB:TZConnection;
+    F_clienteId:Integer;
+    F_nome:String;
+    F_endereco:String;
+    F_cidade:String;
+    F_bairro:String;
+    F_estado:String;
+    F_cep:String;
+    F_telefone:String;
+    F_email:String;
+    F_dataNascimento:TDateTime;
+
+public
+  constructor Create(aConexao:TZConnection);
+  destructor Destroy; override;
+  function Inserir:Boolean;
+  function Atualizar:Boolean;
+  end;
+
+implementation
+
+end.
